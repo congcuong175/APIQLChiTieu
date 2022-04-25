@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLCHITEUModelStoreContainer" CdmEntityContainer="QLCHITEUEntities">
+    <EntitySetMapping Name="DBOChiTieux">
+      <EntityTypeMapping TypeName="QLCHITEUModel.DBOChiTieu">
+        <MappingFragment StoreEntitySet="DBOChiTieu">
+          <ScalarProperty Name="maChiTieu" ColumnName="maChiTieu" />
+          <ScalarProperty Name="maLoaiChiTieu" ColumnName="maLoaiChiTieu" />
+          <ScalarProperty Name="thoiGian" ColumnName="thoiGian" />
+          <ScalarProperty Name="ngayThang" ColumnName="ngayThang" />
+          <ScalarProperty Name="tien" ColumnName="tien" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+          <ScalarProperty Name="isChiTieu" ColumnName="isChiTieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAICHITIEUx">
+      <EntityTypeMapping TypeName="QLCHITEUModel.LOAICHITIEU">
+        <MappingFragment StoreEntitySet="LOAICHITIEU">
+          <ScalarProperty Name="maLoaiCT" ColumnName="maLoaiCT" />
+          <ScalarProperty Name="iCon" ColumnName="iCon" />
+          <ScalarProperty Name="tenLoaiTN" ColumnName="tenLoaiTN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAITHUNHAPs">
+      <EntityTypeMapping TypeName="QLCHITEUModel.LOAITHUNHAP">
+        <MappingFragment StoreEntitySet="LOAITHUNHAP">
+          <ScalarProperty Name="maLoaiTN" ColumnName="maLoaiTN" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="tenLoaiTN" ColumnName="tenLoaiTN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCHITEUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DBOChiTieu">
+    <Key>
+      <PropertyRef Name="maChiTieu" />
+    </Key>
+    <Property Name="maChiTieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maLoaiChiTieu" Type="int" Nullable="false" />
+    <Property Name="thoiGian" Type="ntext" />
+    <Property Name="ngayThang" Type="ntext" Nullable="false" />
+    <Property Name="tien" Type="int" />
+    <Property Name="ghiChu" Type="ntext" />
+    <Property Name="isChiTieu" Type="bit" />
+  </EntityType>
+  <EntityType Name="LOAICHITIEU">
+    <Key>
+      <PropertyRef Name="maLoaiCT" />
+    </Key>
+    <Property Name="maLoaiCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iCon" Type="int" />
+    <Property Name="tenLoaiTN" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LOAITHUNHAP">
+    <Key>
+      <PropertyRef Name="maLoaiTN" />
+    </Key>
+    <Property Name="maLoaiTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icon" Type="int" />
+    <Property Name="tenLoaiTN" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="QLCHITEUModelStoreContainer">
+    <EntitySet Name="DBOChiTieu" EntityType="Self.DBOChiTieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAICHITIEU" EntityType="Self.LOAICHITIEU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAITHUNHAP" EntityType="Self.LOAITHUNHAP" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCHITEUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DBOChiTieu">
+    <Key>
+      <PropertyRef Name="maChiTieu" />
+    </Key>
+    <Property Name="maChiTieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maLoaiChiTieu" Type="Int32" Nullable="false" />
+    <Property Name="thoiGian" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ngayThang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tien" Type="Int32" />
+    <Property Name="ghiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isChiTieu" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LOAICHITIEU">
+    <Key>
+      <PropertyRef Name="maLoaiCT" />
+    </Key>
+    <Property Name="maLoaiCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="iCon" Type="Int32" />
+    <Property Name="tenLoaiTN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOAITHUNHAP">
+    <Key>
+      <PropertyRef Name="maLoaiTN" />
+    </Key>
+    <Property Name="maLoaiTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="icon" Type="Int32" />
+    <Property Name="tenLoaiTN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="QLCHITEUEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DBOChiTieux" EntityType="Self.DBOChiTieu" />
+    <EntitySet Name="LOAICHITIEUx" EntityType="Self.LOAICHITIEU" />
+    <EntitySet Name="LOAITHUNHAPs" EntityType="Self.LOAITHUNHAP" />
+  </EntityContainer>
+</Schema>

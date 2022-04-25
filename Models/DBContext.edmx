@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLCHITEUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DBOChiTieu">
+          <Key>
+            <PropertyRef Name="maChiTieu" />
+          </Key>
+          <Property Name="maChiTieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="maLoaiChiTieu" Type="int" Nullable="false" />
+          <Property Name="thoiGian" Type="ntext" />
+          <Property Name="ngayThang" Type="ntext" Nullable="false" />
+          <Property Name="tien" Type="int" />
+          <Property Name="ghiChu" Type="ntext" />
+          <Property Name="isChiTieu" Type="bit" />
+        </EntityType>
+        <EntityType Name="LOAICHITIEU">
+          <Key>
+            <PropertyRef Name="maLoaiCT" />
+          </Key>
+          <Property Name="maLoaiCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iCon" Type="int" />
+          <Property Name="tenLoaiTN" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="LOAITHUNHAP">
+          <Key>
+            <PropertyRef Name="maLoaiTN" />
+          </Key>
+          <Property Name="maLoaiTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icon" Type="int" />
+          <Property Name="tenLoaiTN" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityContainer Name="QLCHITEUModelStoreContainer">
+          <EntitySet Name="DBOChiTieu" EntityType="Self.DBOChiTieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAICHITIEU" EntityType="Self.LOAICHITIEU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAITHUNHAP" EntityType="Self.LOAITHUNHAP" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLCHITEUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DBOChiTieu">
+          <Key>
+            <PropertyRef Name="maChiTieu" />
+          </Key>
+          <Property Name="maChiTieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="maLoaiChiTieu" Type="Int32" Nullable="false" />
+          <Property Name="thoiGian" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ngayThang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tien" Type="Int32" />
+          <Property Name="ghiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isChiTieu" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LOAICHITIEU">
+          <Key>
+            <PropertyRef Name="maLoaiCT" />
+          </Key>
+          <Property Name="maLoaiCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iCon" Type="Int32" />
+          <Property Name="tenLoaiTN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOAITHUNHAP">
+          <Key>
+            <PropertyRef Name="maLoaiTN" />
+          </Key>
+          <Property Name="maLoaiTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icon" Type="Int32" />
+          <Property Name="tenLoaiTN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="QLCHITEUEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DBOChiTieux" EntityType="Self.DBOChiTieu" />
+          <EntitySet Name="LOAICHITIEUx" EntityType="Self.LOAICHITIEU" />
+          <EntitySet Name="LOAITHUNHAPs" EntityType="Self.LOAITHUNHAP" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLCHITEUModelStoreContainer" CdmEntityContainer="QLCHITEUEntities">
+          <EntitySetMapping Name="DBOChiTieux">
+            <EntityTypeMapping TypeName="QLCHITEUModel.DBOChiTieu">
+              <MappingFragment StoreEntitySet="DBOChiTieu">
+                <ScalarProperty Name="maChiTieu" ColumnName="maChiTieu" />
+                <ScalarProperty Name="maLoaiChiTieu" ColumnName="maLoaiChiTieu" />
+                <ScalarProperty Name="thoiGian" ColumnName="thoiGian" />
+                <ScalarProperty Name="ngayThang" ColumnName="ngayThang" />
+                <ScalarProperty Name="tien" ColumnName="tien" />
+                <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+                <ScalarProperty Name="isChiTieu" ColumnName="isChiTieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAICHITIEUx">
+            <EntityTypeMapping TypeName="QLCHITEUModel.LOAICHITIEU">
+              <MappingFragment StoreEntitySet="LOAICHITIEU">
+                <ScalarProperty Name="maLoaiCT" ColumnName="maLoaiCT" />
+                <ScalarProperty Name="iCon" ColumnName="iCon" />
+                <ScalarProperty Name="tenLoaiTN" ColumnName="tenLoaiTN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAITHUNHAPs">
+            <EntityTypeMapping TypeName="QLCHITEUModel.LOAITHUNHAP">
+              <MappingFragment StoreEntitySet="LOAITHUNHAP">
+                <ScalarProperty Name="maLoaiTN" ColumnName="maLoaiTN" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="tenLoaiTN" ColumnName="tenLoaiTN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
